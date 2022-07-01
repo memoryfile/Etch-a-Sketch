@@ -1,4 +1,6 @@
 #grids {
   display: grid;
+  height: 70vh;
+  width: 80vw;
   grid-template-columns: auto auto;
 }
