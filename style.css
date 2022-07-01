@@ -1,0 +1,4 @@
+#grids {
+  display: grid;
+  grid-template-columns: auto auto;
+}
