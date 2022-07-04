@@ -1,9 +1,9 @@
 #grids {
-  display: grid;
-  height: 10vh;
-  width: 10vw;
-  gap: 50px 50px;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  height: 92vh;
+  width: 60vw; 
+  gap: 20px 10px;
+  grid-template-columns: 10vh 10vh;
 }
