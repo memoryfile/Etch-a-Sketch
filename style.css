@@ -2,5 +2,8 @@
   display: grid;
   height: 10vh;
   width: 10vw;
+  gap: 50px 50px;
+  grid-column-start: 1;
+  grid-column-end: 3;
   grid-template-columns: auto auto;
 }
