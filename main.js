@@ -1,4 +1,4 @@
-const blackButton = document.querySelector("blackButton");
+const blackButton = document.getElementById("blackButton");
 
 function createCells() {
   const grids = document.querySelector("#grids");
@@ -26,6 +26,7 @@ function createCells() {
         blackButton.addEventListener("click", () =>
         cells.style.backgroundColor = "black");
       }
+      cellsBecomeBlack();
 
       function cellsBecomeWhite() {
         cells.style.backgroundColor = "white";
@@ -38,6 +39,7 @@ function createCells() {
   }
 
   makeGrids();
+  
 }
 
 createCells();
