@@ -32,4 +32,9 @@ button {
   display: flex;
   /* gap: 10px; */
   margin: auto;
+  background:rgb(213, 133, 216);
+  border-radius: 100px;
+  padding: 3px 30px;
+  border: 1px solid black;
+  cursor: pointer;
 }
