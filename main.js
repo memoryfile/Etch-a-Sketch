@@ -1,4 +1,7 @@
 const blackButton = document.getElementById("blackButton");
+const whiteButton = document.getElementById("whiteButton");
+const randomButton = document.getElementById("randomButton");
+
 
 function createCells() {
   const grids = document.querySelector("#grids");
@@ -29,12 +32,16 @@ function createCells() {
       cellsBecomeBlack();
 
       function cellsBecomeWhite() {
-        cells.style.backgroundColor = "white";
+        whiteButton.addEventListener("click", () =>
+        cells.style.backgroundColor = "white");
       }
+      cellsBecomeWhite();
 
       function cellsBecomeRandom() {
-        // cells.style.backgroundColor = "black";
+        randomButton.addEventListener("click", () =>
+        cells.style.backgroundColor = '#'+(0x1000000+Math.random()*0xffffff).toString(16).substr(1,6));
       }
+      cellsBecomeRandom();
     }
   }
 
