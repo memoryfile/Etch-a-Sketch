@@ -9,10 +9,8 @@ function createCells() {
       grids.append(cells);
 
       function hoverEffect() {
-        cells.addEventListener("mouseenter", () => console.log("Mouse enter"));
-        cells.style.backgroundColor = "black";
-        cells.addEventListener("mouseleave", () => console.log("Mouse leave"));
-        cells.style.backgroundColor = "white";
+        cells.addEventListener("mouseenter", () => cells.style.backgroundColor = "black");
+        cells.addEventListener("mouseleave", () => cells.style.backgroundColor = "white");
       }
       hoverEffect();
     }
