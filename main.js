@@ -4,10 +4,13 @@ function makeGrids() {
     const cells = document.createElement("cells");
     grids.append(cells);
 
-    function hoverEffect() {
-      grids.addEventListener("mouseenter", enter);
-      grids.addEventListener("mouseleave", leave);
+function hoverEffect() {
+      cells.addEventListener("mouseenter", () => console.log("Mouse enter"));
+      cells.style.color = "black";
+      cells.addEventListener("mouseleave", () => console.log("Mouse leave"));
+      cells.style.color = "white";
     }
+    hoverEffect();
   }
 }
 
