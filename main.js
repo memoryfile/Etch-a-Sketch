@@ -53,13 +53,14 @@ function createCells() {
       cellsBecomeRandom();
 
       function inputButtonPrompt() {
+        let inputButtonVar = prompt("How many squares per side do you want in a grid?")
         inputButton.addEventListener("click", () =>
-          prompt("How many squares per side do you want in a grid?")
+          alert(inputButtonVar)
         );
-        if (prompt != Number)
-         return;
+        // if (inputButtonVar != null) {
+        //     return;
+        // }
       }
-      inputButtonPrompt();
     }
   }
 
@@ -67,3 +68,4 @@ function createCells() {
 }
 
 createCells();
+
