@@ -8,6 +8,10 @@ cells {
   margin: auto;
 }
 
+inputButton {
+  margin-bottom: 2vh;
+}
+
 body {
   background-color: rgb(155, 224, 224);
 }

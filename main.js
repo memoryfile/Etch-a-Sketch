@@ -1,7 +1,7 @@
 const blackButton = document.getElementById("blackButton");
 const whiteButton = document.getElementById("whiteButton");
 const randomButton = document.getElementById("randomButton");
-
+const inputButton = document.getElementById("inputButton");
 
 function createCells() {
   const grids = document.querySelector("#grids");
@@ -26,27 +26,44 @@ function createCells() {
       hoverEffect();
 
       function cellsBecomeBlack() {
-        blackButton.addEventListener("click", () =>
-        cells.style.backgroundColor = "black");
+        blackButton.addEventListener(
+          "click",
+          () => (cells.style.backgroundColor = "black")
+        );
       }
       cellsBecomeBlack();
 
       function cellsBecomeWhite() {
-        whiteButton.addEventListener("click", () =>
-        cells.style.backgroundColor = "white");
+        whiteButton.addEventListener(
+          "click",
+          () => (cells.style.backgroundColor = "white")
+        );
       }
       cellsBecomeWhite();
 
       function cellsBecomeRandom() {
-        randomButton.addEventListener("click", () =>
-        cells.style.backgroundColor = '#'+(0x1000000+Math.random()*0xffffff).toString(16).substr(1,6));
+        randomButton.addEventListener(
+          "click",
+          () =>
+            (cells.style.backgroundColor =
+              "#" +
+              (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6))
+        );
       }
       cellsBecomeRandom();
+
+      function inputButtonPrompt() {
+        inputButton.addEventListener("click", () =>
+          prompt("How many squares per side do you want in a grid?")
+        );
+        if (prompt != Number)
+         return;
+      }
+      inputButtonPrompt();
     }
   }
 
   makeGrids();
-  
 }
 
 createCells();
