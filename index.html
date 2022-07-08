@@ -23,4 +23,14 @@
     </div>
     </div>
   </body>
+  <script>
+    function inputButtonPrompt() {
+      const inputButtonVar = prompt(
+  "How many squares per side do you want in a grid?"
+);
+        document
+          .getElementById("inputButton")
+          .addEventListener("click", () => alert(inputButtonVar));
+    }
+  </script>
 </html>

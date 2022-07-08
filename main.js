@@ -2,9 +2,6 @@ const blackButton = document.getElementById("blackButton");
 const whiteButton = document.getElementById("whiteButton");
 const randomButton = document.getElementById("randomButton");
 const inputButton = document.getElementById("inputButton");
-// const inputButtonVar = prompt(
-//   "How many squares per side do you want in a grid?"
-// );
 
 // On/off switch for all other functions
 
@@ -72,15 +69,6 @@ function createCells() {
         );
       }
       cellsBecomeRandom();
-
-      // function inputButtonPrompt() {
-      //   document
-      //     .getElementById("inputButton")
-      //     .addEventListener("click", () => alert(inputButtonVar));
-      //   // if (inputButtonVar != null) {
-      //   //     return;
-      //   // }
-      // }
     }
   }
 
