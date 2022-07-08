@@ -1,13 +1,26 @@
+gridsContainer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgba(96, 79, 252, 0.082), white);
+}
+
 cells {
   /* background-color: #fff; */
   /* display: flex; */
   display: grid;
-  height: 2px;
-  width: 500px;
+  height: 20px;
+  width: 400px;
+
+  /* Insert a gray box shadow  */
+
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
   /* flex: 1; */
   /* width: 70vw;
   height: 0.15vw; */
-  justify-content: center;
   margin: auto;
 }
 
@@ -28,7 +41,7 @@ button {
   display: flex;
   /* gap: 10px; */
   margin: auto;
-  background:rgb(213, 133, 216);
+  background:rgb(236, 222, 240);
   border-radius: 100px;
   padding: 3px 30px;
   border: 1px solid black;
