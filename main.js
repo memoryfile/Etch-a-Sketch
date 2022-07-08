@@ -6,6 +6,10 @@ let board = document.querySelector(".board");
 board.style.gridTemplateColumns = "repeat(16 , 1fr)";
 board.style.gridTemplateRows = "repeat(16 , 1fr)";
 
+// function changeSize(); {
+//   alert("test");
+// }
+
 // On/off switch for all other functions
 
 function createCells() {
