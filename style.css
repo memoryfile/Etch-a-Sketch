@@ -1,11 +1,13 @@
 cells {
-  background-color: #fff;
-  display: flex;
-  flex: 1;
-  width: 70vw;
-  height: 0.15vw;
+  /* background-color: #fff; */
+  /* display: flex; */
+  display: grid;
+  height: 2px;
+  width: 500px;
+  /* flex: 1; */
+  /* width: 70vw;
+  height: 0.15vw; */
   justify-content: center;
-  border: gray 20px;
   margin: auto;
 }
 

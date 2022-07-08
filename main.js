@@ -2,18 +2,21 @@ const blackButton = document.getElementById("blackButton");
 const whiteButton = document.getElementById("whiteButton");
 const randomButton = document.getElementById("randomButton");
 const inputButton = document.getElementById("inputButton");
+let board = document.querySelector(".board");
+board.style.gridTemplateColumns = "repeat(16 , 1fr)";
+board.style.gridTemplateRows = "repeat(16 , 1fr)";
 
 // On/off switch for all other functions
 
 function createCells() {
-  const grids = document.querySelector("#grids");
+  // Make board
 
-  // Make grid
-
-  function makeGrids() {
+  function makeBoard() {
     for (let i = 0; i < 256; i++) {
-      const cells = document.createElement("cells");
-      grids.append(cells);
+      let cells = document.createElement("cells");
+      cells.style.backgroundColor = "white";
+      board.insertAdjacentElement("beforeend", cells);
+      // board.append(cells);
 
       // Allow a mouse to interact with the grid
 
@@ -72,7 +75,7 @@ function createCells() {
     }
   }
 
-  makeGrids();
+  makeBoard();
 }
 
 createCells();
