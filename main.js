@@ -20,6 +20,11 @@ function createCells() {
 
       // Allow a mouse to interact with the grid
 
+      function changeGridSize() {
+        
+      }
+
+
       function hoverEffect() {
         // if (cellsBecomeWhite()) {
         cells.addEventListener(
