@@ -24,7 +24,7 @@ function createCells() {
     if (size === Number) {
       cells.style.backgroundColor = "yellow";
     }
-  }
+  };
   // inputButtonPrompt();
 
   function makeBoard() {
