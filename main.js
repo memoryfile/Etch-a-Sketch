@@ -5,8 +5,9 @@ const inputButton = document.getElementById("inputButton");
 const resetButton = document.getElementById("resetButton");
 let board = document.querySelector(".board");
 let content = document.querySelector(".content");
-board.style.gridTemplateColumns = "repeat(16 , 1fr)";
-board.style.gridTemplateRows = "repeat(16 , 1fr)";
+let size = Number(
+  window.prompt("How many squares per side do you want in the grid?", 16)
+);
 
 // On/off switch for all other functions
 
@@ -14,21 +15,20 @@ function createCells() {
   // Make board
 
   inputButton.onclick = function inputButtonPrompt() {
-    let size = Number(
-      window.prompt("How many squares per side do you want in the grid?", 16)
-    );
-    inputButton.addEventListener("click", () => size);
-    if (size === null) {
-      return alert("That's not a number");
-    }
-    if (size === Number) {
-      cells.style.backgroundColor = "yellow";
+    // inputButton.addEventListener("click", () => size);
+    console.log(size);
+    if (size === null || size < 2 || size > 100) {
+      return console.log("Could not input grid size, not a valid number.");
+    } else {
+      // makeBoard();
     }
   };
   // inputButtonPrompt();
 
   function makeBoard() {
-    for (let i = 0; i < 256; i++) {
+    board.style.gridTemplateColumns = "repeat(${size} , 1fr)";
+    board.style.gridTemplateRows = "repeat(${size} , 1fr)";
+    for (let i = 0; i < (size * size); i++) {
       let cells = document.createElement("cells");
       cells.style.backgroundColor = "white";
 
