@@ -14,20 +14,9 @@ let size = Number(
 function createCells() {
   // Make board
 
-  inputButton.onclick = function inputButtonPrompt() {
-    // inputButton.addEventListener("click", () => size);
-    console.log(size);
-    if (size === null || size < 2 || size > 100) {
-      return console.log("Could not input grid size, not a valid number.");
-    } else {
-      // makeBoard();
-    }
-  };
-  // inputButtonPrompt();
-
   function makeBoard() {
-    board.style.gridTemplateColumns = "repeat(${size} , 1fr)";
-    board.style.gridTemplateRows = "repeat(${size} , 1fr)";
+    board.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
+    board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
     for (let i = 0; i < (size * size); i++) {
       let cells = document.createElement("cells");
       cells.style.backgroundColor = "white";
@@ -36,17 +25,27 @@ function createCells() {
 
       board.insertAdjacentElement("beforeend", cells);
 
-      function hoverEffect() {
-        cells.addEventListener(
-          "mouseenter",
-          () => (cells.style.backgroundColor = "black")
-        );
-        cells.addEventListener(
-          "mouseleave",
-          () => (cells.style.backgroundColor = "white")
-        );
-      }
+      // function hoverEffect() {
+      //   cells.addEventListener(
+      //     "mouseenter",
+      //     () => (cells.style.backgroundColor = "black")
+      //   );
+      //   cells.addEventListener(
+      //     "mouseleave",
+      //     () => (cells.style.backgroundColor = "white")
+      //   );
+      // }
       // hoverEffect();
+
+      inputButton.onclick = function inputButtonPrompt() {
+        // inputButton.addEventListener("click", () => size);
+        console.log(size);
+        if (size === null || size < 2 || size > 100) {
+          return console.log("Could not input grid size, not a valid number.");
+        } else {
+          makeBoard(size);
+        }
+      }
 
       // Allow mouse clicks to interact with the grid
 
@@ -102,7 +101,7 @@ function createCells() {
     }
   }
 
-  makeBoard();
+  makeBoard(16);
 }
 
 createCells();
