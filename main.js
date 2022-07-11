@@ -17,7 +17,7 @@ function createCells() {
   function makeBoard() {
     board.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
     board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
-    for (let i = 0; i < (size * size); i++) {
+    for (let i = 0; i < size * size; i++) {
       let cells = document.createElement("cells");
       cells.style.backgroundColor = "white";
 
@@ -25,27 +25,14 @@ function createCells() {
 
       board.insertAdjacentElement("beforeend", cells);
 
-      // function hoverEffect() {
-      //   cells.addEventListener(
-      //     "mouseenter",
-      //     () => (cells.style.backgroundColor = "black")
-      //   );
-      //   cells.addEventListener(
-      //     "mouseleave",
-      //     () => (cells.style.backgroundColor = "white")
-      //   );
-      // }
-      // hoverEffect();
-
       inputButton.onclick = function inputButtonPrompt() {
-        // inputButton.addEventListener("click", () => size);
-        console.log(size);
         if (size === null || size < 2 || size > 100) {
           return console.log("Could not input grid size, not a valid number.");
         } else {
-          makeBoard(size);
+          console.log(size);
+          // makeBoard(size);
         }
-      }
+      };
 
       // Allow mouse clicks to interact with the grid
 
@@ -101,7 +88,21 @@ function createCells() {
     }
   }
 
-  makeBoard(16);
+  makeBoard();
 }
 
 createCells();
+
+// Cells coloring hover effect (can use instead of a click effect)
+
+// function hoverEffect() {
+//   cells.addEventListener(
+//     "mouseenter",
+//     () => (cells.style.backgroundColor = "black")
+//   );
+//   cells.addEventListener(
+//     "mouseleave",
+//     () => (cells.style.backgroundColor = "white")
+//   );
+// }
+// hoverEffect();
