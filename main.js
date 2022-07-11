@@ -37,7 +37,6 @@ function createCells() {
       board.insertAdjacentElement("beforeend", cells);
 
       function hoverEffect() {
-        // if (cellsBecomeWhite()) {
         cells.addEventListener(
           "mouseenter",
           () => (cells.style.backgroundColor = "black")
