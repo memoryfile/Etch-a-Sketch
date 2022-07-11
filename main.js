@@ -2,13 +2,11 @@ const blackButton = document.getElementById("blackButton");
 const whiteButton = document.getElementById("whiteButton");
 const randomButton = document.getElementById("randomButton");
 const inputButton = document.getElementById("inputButton");
+const resetButton = document.getElementById("resetButton");
+// const topContent = document.querySelector("topContent");
 let board = document.querySelector(".board");
 board.style.gridTemplateColumns = "repeat(16 , 1fr)";
 board.style.gridTemplateRows = "repeat(16 , 1fr)";
-
-// function changeSize(); {
-//   alert("test");
-// }
 
 // On/off switch for all other functions
 
@@ -22,12 +20,13 @@ function createCells() {
       board.insertAdjacentElement("beforeend", cells);
       // board.append(cells);
 
-      // Allow a mouse to interact with the grid
-
       function changeGridSize() {
-        
+        topContent.addEventListener(
+          "click",
+          () => (alert("test"))
+        );
       }
-
+      // changeGridSize();
 
       function hoverEffect() {
         // if (cellsBecomeWhite()) {
@@ -51,7 +50,23 @@ function createCells() {
         //   );
         // }
       }
-      hoverEffect();
+      // hoverEffect();
+
+
+      // Allow mouse clicks to interact with the grid
+
+      function clickEffect() {
+        // if (cellsBecomeWhite()) {
+        cells.addEventListener(
+          "click",
+          () => (cells.style.backgroundColor = "black")
+        );
+        cells.addEventListener(
+          "click",
+          () => (cells.style.backgroundColor = "white")
+        );
+      }
+      clickEffect();
 
       // Allow buttons to change grid color
 
@@ -70,6 +85,14 @@ function createCells() {
         );
       }
       cellsBecomeWhite();
+
+      function cellsReset() {
+        resetButton.addEventListener(
+          "click",
+          () => (cells.style.backgroundColor = "white")
+        );
+      }
+      cellsReset();
 
       function cellsBecomeRandom() {
         randomButton.addEventListener(
