@@ -19,20 +19,28 @@ function createCells() {
     board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
     for (let i = 0; i < size * size; i++) {
       let cells = document.createElement("cells");
-      cells.style.backgroundColor = "white";
+      cells.style.backgroundColor = "grey";
 
       // Another way to 'append'
 
       board.insertAdjacentElement("beforeend", cells);
 
-      inputButton.addEventListener("click", () => {
+      
+
+      inputButton.addEventListener("click", promptSize => {
         if (size === null || size === NaN || size < 2 || size > 100) {
           return console.log("Could not input grid size, not a valid number.");
         } else {
           console.log(size);
-          // makeBoard(size);
+          makeBoard(size);
         }
       });
+      inputButton.addEventListener("click", promptSize);
+      function promptSize() {
+        Number(
+          window.prompt("How many squares per side do you want in the grid?", 16)
+        );
+      }
 
       // Allow mouse clicks to interact with the grid
 
