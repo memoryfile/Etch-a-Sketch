@@ -25,14 +25,14 @@ function createCells() {
 
       board.insertAdjacentElement("beforeend", cells);
 
-      inputButton.onclick = function inputButtonPrompt() {
-        if (size === null || size < 2 || size > 100) {
+      inputButton.addEventListener("click", () => {
+        if (size === null || size === NaN || size < 2 || size > 100) {
           return console.log("Could not input grid size, not a valid number.");
         } else {
           console.log(size);
           // makeBoard(size);
         }
-      };
+      });
 
       // Allow mouse clicks to interact with the grid
 
