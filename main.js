@@ -9,6 +9,8 @@ let size = Number(
   window.prompt("How many squares per side do you want in the grid?", 16)
 );
 
+// New branch
+
 // On/off switch for all other functions
 
 function createCells() {
