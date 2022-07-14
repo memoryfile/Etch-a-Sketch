@@ -5,29 +5,37 @@ const inputButton = document.getElementById("inputButton");
 const resetButton = document.getElementById("resetButton");
 let board = document.querySelector(".board");
 let content = document.querySelector(".content");
-// let size = Number(
-//   window.prompt("How many squares per side do you want in the grid?", 16)
-// );
+let cells = document.createElement("cells");
 
-function makeBoard() {
-  board.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
-  board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
-  for (let i = 0; i < size * size; i++) {
-    let cells = document.createElement("cells");
-    cells.style.backgroundColor = "grey";
+function createCells() {
+  cells.style.backgroundColor = "blue";
+  // board.insertAdjacentElement("beforeend", cells);
+  board.append(cells);
+}
 
-    // Another way to 'append'
+inputButton.addEventListener("click", promptSize);
 
-    board.insertAdjacentElement("beforeend", cells);
+function promptSize(size) {
+  size =
+    Number(
+      window.prompt("How many squares per side do you want in the grid?", 16)
+    );
+  if (size === null || size === NaN || size < 2 || size > 100) {
+    return console.log("Could not input grid size, not a valid number.");
+  } else {
+    board.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
+    board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
+    let amount = size * size;
+    for (let i = 0; i < amount; i++) {
+      createCells();
+    }
+  }
 
-    inputButton.addEventListener("click", promptSize);
-    function promptSize() {
-      Number(
-        window.prompt("How many squares per side do you want in the grid?", 16)
-      );
-      if (size === null || size === NaN || size < 2 || size > 100) {
-        return console.log("Could not input grid size, not a valid number.");
-      }
+  function makeBoard() {
+    board.style.gridTemplateColumns = `repeat(16 , 1fr)`;
+    board.style.gridTemplateRows = `repeat(16 , 1fr)`;
+    for (let i = 0; i < 256; i++) {
+      createCells();
     }
 
     // Allow mouse clicks to interact with the grid
@@ -77,9 +85,9 @@ function makeBoard() {
     }
     cellsBecomeRandom();
   }
-}
 
-makeBoard();
+  makeBoard();
+}
 
 // Cells coloring hover effect (can use instead of a click effect)
 
