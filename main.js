@@ -26,7 +26,6 @@ function createCells() {
       board.insertAdjacentElement("beforeend", cells);
 
       
-
       inputButton.addEventListener("click", promptSize => {
         if (size === null || size === NaN || size < 2 || size > 100) {
           return console.log("Could not input grid size, not a valid number.");
