@@ -14,7 +14,7 @@ function makeBoard(size) {
   board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
   for (let i = 0; i < amount; i++) {
     let cell = document.createElement("div");
-    cell.style.backgroundColor = "grey";
+    cell.style.backgroundColor = "cyan";
     board.insertAdjacentElement("beforeend", cell);
   }
 }
@@ -27,9 +27,7 @@ function promptSize() {
     window.prompt("How many squares per side do you want in the grid?", 16)
   );
   if (size === null || size === NaN || size < 2 || size > 100) {
-    return alert(
-      "You can only choose between 2-100."
-    );
+    return alert("You can only choose between 2 - 100.");
   } else {
     return makeBoard(size);
   }
@@ -38,7 +36,10 @@ function promptSize() {
 // Allow mouse clicks to interact with the grid
 
 function clickEffect() {
-  cell.addEventListener("click", () => (cell.style.backgroundColor = "white"));
+  cell.addEventListener(
+    "click",
+    () => (cell.style.backgroundColor = "white")
+  );
 }
 clickEffect();
 
@@ -63,7 +64,7 @@ cellBecomeWhite();
 function cellReset() {
   resetButton.addEventListener(
     "click",
-    () => (cellGrid.style.backgroundColor = "white")
+    () => (cell.style.backgroundColor = "white")
   );
 }
 cellReset();
@@ -72,7 +73,7 @@ function cellBecomeRandom() {
   randomButton.addEventListener(
     "click",
     () =>
-      (cellGrid.style.backgroundColor =
+      (cell.style.backgroundColor =
         "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6))
   );
 }
