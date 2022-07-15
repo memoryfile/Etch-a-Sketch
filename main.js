@@ -5,7 +5,7 @@ const inputButton = document.getElementById("inputButton");
 const resetButton = document.getElementById("resetButton");
 let board = document.querySelector(".board");
 let content = document.querySelector(".content");
-let cellGrid = board.querySelectorAll("div");
+// let cellGrid = board.querySelectorAll("div");
 let size = 16;
 
 function makeBoard(size) {
@@ -14,11 +14,11 @@ function makeBoard(size) {
   board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
   for (let i = 0; i < amount; i++) {
     let cell = document.createElement("div");
-    cell.style.backgroundColor = "cyan";
+    cell.style.backgroundColor = "white";
     board.insertAdjacentElement("beforeend", cell);
   }
 }
-makeBoard(size);
+makeBoard(size); // If this line and the couple above are moved to the end, it allows the other functions to work, but causes an infinite for loop for the prompt once again.
 
 inputButton.addEventListener("click", promptSize);
 
