@@ -27,7 +27,7 @@ function promptSize() {
     window.prompt("How many squares per side do you want in the grid?", 16)
   );
   if (size === null || size === NaN || size < 2 || size > 100) {
-    return console.log("Could not input grid size, not a valid number.");
+    return alert("Could not input grid size, as the only options are between 2-100.");
   } else {
     return makeBoard(size);
   }
