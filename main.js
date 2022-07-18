@@ -14,6 +14,9 @@ function makeBoard(size) {
   board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
   for (let i = 0; i < amount; i++) {
     let cell = document.createElement("div");
+
+    // Allow mouse clicks to interact with the grid
+
     function clickEffect() {
       cell.addEventListener(
         "click",
@@ -21,6 +24,8 @@ function makeBoard(size) {
       );
     }
     clickEffect();
+
+    // Allow buttons to change grid
 
     function cellBecomeBlack() {
       blackButton.addEventListener(
@@ -74,51 +79,6 @@ function promptSize() {
     return makeBoard(size);
   }
 }
-
-// Allow mouse clicks to interact with the grid
-
-// function clickEffect() {
-//   cell.addEventListener(
-//     "click",
-//     () => (cell.style.backgroundColor = "white")
-//   );
-// }
-
-// Allow buttons to change grid
-
-// function cellBecomeBlack() {
-//   blackButton.addEventListener(
-//     "click",
-//     () => (cell.style.backgroundColor = "black")
-//   );
-// }
-// cellBecomeBlack();
-
-// function cellBecomeWhite() {
-//   whiteButton.addEventListener(
-//     "click",
-//     () => (cell.style.backgroundColor = "white")
-//   );
-// }
-// cellBecomeWhite();
-
-// function cellReset() {
-//   resetButton.addEventListener(
-//     "click",
-//     () => (cell.style.backgroundColor = "white")
-//   );
-// }
-// cellReset();
-
-// function cellBecomeRandom() {
-//   randomButton.addEventListener(
-//     "click",
-//     () =>
-//       (cell.style.backgroundColor =
-//         "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6))
-//   );
-// }
-// cellBecomeRandom();
 
 // cell coloring hover effect (can use instead of a click effect)
 
