@@ -27,45 +27,40 @@ function makeBoard(size) {
 
     // Allow buttons to change grid
 
-    function cellBecomeBlack() {
-      blackButton.addEventListener(
-        "click",
-        () => (cell.style.backgroundColor = "black")
-      );
-    }
-    cellBecomeBlack();
-
-    function cellBecomeWhite() {
-      whiteButton.addEventListener(
-        "click",
-        () => (cell.style.backgroundColor = "white")
-      );
-    }
-    cellBecomeWhite();
+    resetButton.addEventListener("click", cellReset);
 
     function cellReset() {
-      resetButton.addEventListener(
-        "click",
-        () => (cell.style.backgroundColor = "white")
-      );
+      let color = cell.style.backgroundColor;
+      cell.style.backgroundColor = color;
     }
-    cellReset();
+
+    blackButton.addEventListener("click", cellBecomeBlack);
+
+    function cellBecomeBlack() {
+      cell.style.backgroundColor = "black";
+      let color = "black";
+    }
+
+    whiteButton.addEventListener("click", cellBecomeWhite);
+
+    function cellBecomeWhite() {
+      cell.style.backgroundColor = "white";
+      let color = (cell.style.backgroundColor = "white");
+    }
+
+    randomButton.addEventListener("click", cellBecomeRandom);
 
     function cellBecomeRandom() {
-      randomButton.addEventListener(
-        "click",
-        () =>
-          (cell.style.backgroundColor =
-            "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6))
-      );
+      cell.style.backgroundColor =
+        "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
     }
-    cellBecomeRandom();
+    // }
 
-    cell.style.backgroundColor = "white";
+    cell.style.backgroundColor = "black";
     board.insertAdjacentElement("beforeend", cell);
   }
 }
-makeBoard(size); // If this line and the couple above are moved to the end, it allows the other functions to work, but causes an infinite for loop for the prompt once again.
+makeBoard(size);
 
 inputButton.addEventListener("click", promptSize);
 
@@ -76,7 +71,7 @@ function promptSize() {
   if (size === null || size === NaN || size < 2 || size > 100) {
     return alert("You can only choose between 2 - 100.");
   } else {
-    return makeBoard(size);
+    makeBoard(size);
   }
 }
 
