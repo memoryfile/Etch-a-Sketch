@@ -1,5 +1,5 @@
 # Etch-a-Sketch
-A minimalist sketchpad created as part of study with the Odin Project.
+A minimalist sketchpad created for the Odin Project.
 
 ## Thanks to
 
