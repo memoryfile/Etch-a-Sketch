@@ -47,3 +47,11 @@ button {
   border: 1px solid black;
   cursor: pointer;
 }
+
+.buttons {
+  padding: 20px;
+}
+
+.inputButton {
+  padding: 20px 20px;
+}

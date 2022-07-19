@@ -1,5 +1,3 @@
-const blackButton = document.getElementById("blackButton");
-const whiteButton = document.getElementById("whiteButton");
 const randomButton = document.getElementById("randomButton");
 const inputButton = document.getElementById("inputButton");
 const resetButton = document.getElementById("resetButton");
@@ -30,22 +28,7 @@ function makeBoard(size) {
     resetButton.addEventListener("click", cellReset);
 
     function cellReset() {
-      let color = cell.style.backgroundColor;
-      cell.style.backgroundColor = color;
-    }
-
-    blackButton.addEventListener("click", cellBecomeBlack);
-
-    function cellBecomeBlack() {
       cell.style.backgroundColor = "black";
-      let color = "black";
-    }
-
-    whiteButton.addEventListener("click", cellBecomeWhite);
-
-    function cellBecomeWhite() {
-      cell.style.backgroundColor = "white";
-      let color = (cell.style.backgroundColor = "white");
     }
 
     randomButton.addEventListener("click", cellBecomeRandom);
@@ -71,7 +54,9 @@ function promptSize() {
   if (size === null || size === NaN || size < 2 || size > 100) {
     return alert("You can only choose between 2 - 100.");
   } else {
-    makeBoard(size);
+    let a = makeBoard(size);
+    let b = cellReset();
+    return a && b;
   }
 }
 
