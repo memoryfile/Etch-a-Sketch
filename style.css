@@ -49,9 +49,8 @@ button {
 }
 
 .buttons {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-}
-
-.inputButton {
-  padding: 20px 20px;
+  gap: 10px;
 }

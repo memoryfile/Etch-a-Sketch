@@ -6,6 +6,7 @@ let content = document.querySelector(".content");
 // let cellGrid = board.querySelectorAll("div");
 let size = 16;
 
+
 function makeBoard(size) {
   let amount = size * size;
   board.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
@@ -54,9 +55,9 @@ function promptSize() {
   if (size === null || size === NaN || size < 2 || size > 100) {
     return alert("You can only choose between 2 - 100.");
   } else {
-    let a = makeBoard(size);
-    let b = cellReset();
-    return a && b;
+    const a = makeBoard(size);
+    // const b = (cell.style.backgroundColor = "black");
+    return a;
   }
 }
 
