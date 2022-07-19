@@ -6,7 +6,6 @@ let content = document.querySelector(".content");
 // let cellGrid = board.querySelectorAll("div");
 let size = 16;
 
-
 function makeBoard(size) {
   let amount = size * size;
   board.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
@@ -38,7 +37,6 @@ function makeBoard(size) {
       cell.style.backgroundColor =
         "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
     }
-    // }
 
     cell.style.backgroundColor = "black";
     board.insertAdjacentElement("beforeend", cell);
