@@ -5,4 +5,4 @@
 
 ## Thanks to
 
-[Coding with Rob](https://youtu.be/dyhuaXeuyGo) & The Odin Project community
+[Coding with Rob](https://youtu.be/dyhuaXeuyGo) & The Odin Project community!
